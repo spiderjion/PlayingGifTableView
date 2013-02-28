@@ -80,82 +80,108 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-//        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    }
-
-    for (UIView *v in [cell.contentView subviews]) {
-        if ([v isKindOfClass:[UIView class]]){
-            [v removeFromSuperview];
+    static NSString *cellIdentifier2 = @"Cell2";
+    UITableViewCell *cell = nil;
+    if (indexPath.row % 2 == 1) {
+        cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (cell == nil) {
+            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            NSData *gifData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle]
+                                                              pathForResource:@"bbb"
+                                                              ofType:@"gif"]];
+            UIImageView *imageView = [UIImageView imageViewWithGIFData:gifData];
+            imageView.frame = CGRectMake(0, 0, 100, 100);
+            imageView.tag = 100;
+            [cell.contentView addSubview:imageView];
         }
     }
-    if ([indexPath row] == 0) {
-//        NSData *gifData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle]
-//                                                          pathForResource:@"demo"
-//                                                          ofType:@"gif"]];
-        UIImageView *imageView = [[UIImageView alloc] init];
-        imageView.image = [UIImage imageNamed:@"IMG_0015.jpg"];
-        imageView.frame = CGRectMake(0, 0, 100, 100);
-        [cell.contentView addSubview:imageView];
-    }else if ( [indexPath row] == 1){
-        NSData *gifData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle]
-                                                          pathForResource:@"bbb"
-                                                          ofType:@"gif"]];
-        UIImageView *imageView = [UIImageView imageViewWithGIFData:gifData];
-        imageView.frame = CGRectMake(0, 0, 100, 100);
-        [cell.contentView addSubview:imageView];
-    }else if ( [indexPath row] == 2){
-//        NSData *gifData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle]
-//                                                          pathForResource:@"demo"
-//                                                          ofType:@"gif"]];
-//        UIImageView *imageView = [UIImageView imageViewWithGIFData:gifData];
-//        imageView.frame = CGRectMake(0, 0, 100, 100);
-//        [cell.contentView addSubview:imageView];
-    }else if ( [indexPath row] == 3){
-        NSData *gifData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle]
-                                                          pathForResource:@"bbb"
-                                                          ofType:@"gif"]];
-        UIImageView *imageView = [UIImageView imageViewWithGIFData:gifData];
-        imageView.frame = CGRectMake(0, 0, 100, 100);
-        [cell.contentView addSubview:imageView];
-    }else if ( [indexPath row] == 4){
-//        NSData *gifData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle]
-//                                                          pathForResource:@"demo"
-//                                                          ofType:@"gif"]];
-//        UIImageView *imageView = [UIImageView imageViewWithGIFData:gifData];
-//        imageView.frame = CGRectMake(0, 0, 100, 100);
-//        [cell.contentView addSubview:imageView];
-    }else if ( [indexPath row] == 5){
-        NSData *gifData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle]
-                                                          pathForResource:@"bbb"
-                                                          ofType:@"gif"]];
-        UIImageView *imageView = [UIImageView imageViewWithGIFData:gifData];
-        imageView.frame = CGRectMake(0, 0, 100, 100);
-        [cell.contentView addSubview:imageView];
-    }else if ( [indexPath row] == 6){
-//        NSData *gifData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle]
-//                                                          pathForResource:@"demo"
-//                                                          ofType:@"gif"]];
-//        UIImageView *imageView = [UIImageView imageViewWithGIFData:gifData];
-//        imageView.frame = CGRectMake(0, 0, 100, 100);
-//        [cell.contentView addSubview:imageView];
-    }else if ( [indexPath row] == 7){
-        NSData *gifData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle]
-                                                          pathForResource:@"bbb"
-                                                          ofType:@"gif"]];
-        UIImageView *imageView = [UIImageView imageViewWithGIFData:gifData];
-        imageView.frame = CGRectMake(0, 0, 100, 100);
-        [cell.contentView addSubview:imageView];
-    }else{
-        NSData *gifData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle]
-                                                          pathForResource:@"bbb"
-                                                          ofType:@"gif"]];
-        UIImageView *imageView = [UIImageView imageViewWithGIFData:gifData];
-        imageView.frame = CGRectMake(0, 0, 100, 100);
-        [cell.contentView addSubview:imageView];
+    else
+    {
+        cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier2];
+        if (cell == nil) {
+            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier2] autorelease];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            NSData *gifData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle]
+                                                              pathForResource:@"demo"
+                                                              ofType:@"gif"]];
+            UIImageView *imageView = [UIImageView imageViewWithGIFData:gifData];
+            imageView.frame = CGRectMake(0, 0, 100, 100);
+            imageView.tag = 100;
+            [cell.contentView addSubview:imageView];
+        }
     }
+
+//    for (UIView *v in [cell.contentView subviews]) {
+//        if ([v isKindOfClass:[UIView class]]){
+//            [v removeFromSuperview];
+//        }
+//    }
+//    if ([indexPath row] == 0) {
+////        NSData *gifData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle]
+////                                                          pathForResource:@"demo"
+////                                                          ofType:@"gif"]];
+//        UIImageView *imageView = [[UIImageView alloc] init];
+//        imageView.image = [UIImage imageNamed:@"IMG_0015.jpg"];
+//        imageView.frame = CGRectMake(0, 0, 100, 100);
+//        [cell.contentView addSubview:imageView];
+//    }else if ( [indexPath row] == 1){
+//        NSData *gifData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle]
+//                                                          pathForResource:@"bbb"
+//                                                          ofType:@"gif"]];
+//        UIImageView *imageView = [UIImageView imageViewWithGIFData:gifData];
+//        imageView.frame = CGRectMake(0, 0, 100, 100);
+//        [cell.contentView addSubview:imageView];
+//    }else if ( [indexPath row] == 2){
+////        NSData *gifData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle]
+////                                                          pathForResource:@"demo"
+////                                                          ofType:@"gif"]];
+////        UIImageView *imageView = [UIImageView imageViewWithGIFData:gifData];
+////        imageView.frame = CGRectMake(0, 0, 100, 100);
+////        [cell.contentView addSubview:imageView];
+//    }else if ( [indexPath row] == 3){
+//        NSData *gifData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle]
+//                                                          pathForResource:@"bbb"
+//                                                          ofType:@"gif"]];
+//        UIImageView *imageView = [UIImageView imageViewWithGIFData:gifData];
+//        imageView.frame = CGRectMake(0, 0, 100, 100);
+//        [cell.contentView addSubview:imageView];
+//    }else if ( [indexPath row] == 4){
+////        NSData *gifData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle]
+////                                                          pathForResource:@"demo"
+////                                                          ofType:@"gif"]];
+////        UIImageView *imageView = [UIImageView imageViewWithGIFData:gifData];
+////        imageView.frame = CGRectMake(0, 0, 100, 100);
+////        [cell.contentView addSubview:imageView];
+//    }else if ( [indexPath row] == 5){
+//        NSData *gifData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle]
+//                                                          pathForResource:@"bbb"
+//                                                          ofType:@"gif"]];
+//        UIImageView *imageView = [UIImageView imageViewWithGIFData:gifData];
+//        imageView.frame = CGRectMake(0, 0, 100, 100);
+//        [cell.contentView addSubview:imageView];
+//    }else if ( [indexPath row] == 6){
+////        NSData *gifData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle]
+////                                                          pathForResource:@"demo"
+////                                                          ofType:@"gif"]];
+////        UIImageView *imageView = [UIImageView imageViewWithGIFData:gifData];
+////        imageView.frame = CGRectMake(0, 0, 100, 100);
+////        [cell.contentView addSubview:imageView];
+//    }else if ( [indexPath row] == 7){
+//        NSData *gifData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle]
+//                                                          pathForResource:@"bbb"
+//                                                          ofType:@"gif"]];
+//        UIImageView *imageView = [UIImageView imageViewWithGIFData:gifData];
+//        imageView.frame = CGRectMake(0, 0, 100, 100);
+//        [cell.contentView addSubview:imageView];
+//    }else{
+//        NSData *gifData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle]
+//                                                          pathForResource:@"bbb"
+//                                                          ofType:@"gif"]];
+//        UIImageView *imageView = [UIImageView imageViewWithGIFData:gifData];
+//        imageView.frame = CGRectMake(0, 0, 100, 100);
+//        [cell.contentView addSubview:imageView];
+//    }
     
 
 //    [self performSelector:@selector(reStartAnimating) withObject:nil afterDelay:0.3f];
@@ -193,6 +219,11 @@
     [self performSelector:@selector(reStartAnimating) withObject:nil afterDelay:0.1f inModes:arr];
 }
 
-
+//cell显示的时候重新开启动画
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSArray *arr = [NSArray arrayWithObject:NSRunLoopCommonModes];
+    [self performSelector:@selector(reStartAnimating) withObject:nil afterDelay:0.1f inModes:arr];
+}
 
 @end

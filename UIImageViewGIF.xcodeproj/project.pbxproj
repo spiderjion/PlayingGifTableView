@@ -22,6 +22,8 @@
 		9D6569EB14FB2E3000FA03D8 /* UIImageView+imageViewWithGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D6569EA14FB2E3000FA03D8 /* UIImageView+imageViewWithGIF.m */; };
 		9D6569ED14FB2ED100FA03D8 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D6569EC14FB2ED100FA03D8 /* ImageIO.framework */; };
 		9D6569EF14FB320E00FA03D8 /* demo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9D6569EE14FB320E00FA03D8 /* demo.gif */; };
+		A965755616DF25F5005804B6 /* GifCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A965755516DF25F5005804B6 /* GifCell.m */; };
+		A965755816DF26AE005804B6 /* GifCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A965755716DF26AE005804B6 /* GifCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,9 @@
 		9D6569EA14FB2E3000FA03D8 /* UIImageView+imageViewWithGIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+imageViewWithGIF.m"; sourceTree = "<group>"; };
 		9D6569EC14FB2ED100FA03D8 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		9D6569EE14FB320E00FA03D8 /* demo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = demo.gif; sourceTree = "<group>"; };
+		A965755416DF25F5005804B6 /* GifCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GifCell.h; sourceTree = "<group>"; };
+		A965755516DF25F5005804B6 /* GifCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GifCell.m; sourceTree = "<group>"; };
+		A965755716DF26AE005804B6 /* GifCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GifCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +108,9 @@
 				9D6569EE14FB320E00FA03D8 /* demo.gif */,
 				6C620D4516DD07DD00E41FB0 /* bbb.gif */,
 				9D6569D214FB2DA900FA03D8 /* Supporting Files */,
+				A965755416DF25F5005804B6 /* GifCell.h */,
+				A965755516DF25F5005804B6 /* GifCell.m */,
+				A965755716DF26AE005804B6 /* GifCell.xib */,
 				6C620D4A16DD0AD300E41FB0 /* testViewController.h */,
 				6C620D4B16DD0AD300E41FB0 /* testViewController.m */,
 				6C620D4C16DD0AD300E41FB0 /* testViewController.xib */,
@@ -188,6 +196,7 @@
 				6C620D4E16DD0AD300E41FB0 /* testViewController.xib in Resources */,
 				6C620D5016DD0B3100E41FB0 /* Default-568h@2x.png in Resources */,
 				6C620D5216DD152600E41FB0 /* IMG_0015.JPG in Resources */,
+				A965755816DF26AE005804B6 /* GifCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,6 +212,7 @@
 				9D6569DF14FB2DA900FA03D8 /* DemoViewController.m in Sources */,
 				9D6569EB14FB2E3000FA03D8 /* UIImageView+imageViewWithGIF.m in Sources */,
 				6C620D4D16DD0AD300E41FB0 /* testViewController.m in Sources */,
+				A965755616DF25F5005804B6 /* GifCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
