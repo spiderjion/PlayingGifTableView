@@ -13,4 +13,5 @@
 @interface UIImageView(animatedImageViewWithGIF)
 + (UIImageView *)imageViewWithGIFData:(NSData *)data;
 //+ (UIImageView *)imageViewWithGIFURL:(NSURL *)url;
+- (void)startAnimationWithImageData:(NSData *)data;
 @end

@@ -46,5 +46,6 @@
     UINavigationController *vd = [[UINavigationController alloc] initWithRootViewController:detail];
     [vd.navigationBar.topItem setTitle: @"用户注册"];
     [self presentViewController:vd animated:YES completion:^{}];
+    [vd release];
 }
 @end
